@@ -1,0 +1,38 @@
+name: "${project.artifactId}"
+version: "${project.version} (${buildNumber})"
+author: "Valaphee <iam@valaphee.com>"
+description: >
+  Hub GCP Plugin for the CyclonePort.
+website: "https://www.valaphee.com"
+load: POSTWORLD
+main: "com.valaphee.cycloneport.CyclonePortGP"
+depend: [ "cyclone-minecraft-bukkit", "cycloneport-bukkit" ]
+prefix: "CyclonePort"
+database: true
+permissions:
+  cycloneport.hub.*:
+    description: "Gives access to all Hub function and commands."
+    childrens:
+      cycloneport.hub.flymode: true
+      cycloneport.hub.gamemode: true
+      cycloneport.hub.build: true
+  cycloneport.hub.flymode:
+    description: "Allows you to change your flymode."
+    default: false
+  cycloneport.hub.flymode.other:
+    description: "Allows you to change the flymode of other players."
+    default: false
+    childrens:
+      cycloneport.hub.flymode: true
+  cycloneport.hub.gamemode:
+    description: "Allows you to set your gamemode."
+    default: false
+  cycloneport.hub.gamemode.other:
+    description: "Allows you to set the gamemode of other players."
+    default: false
+    childrens:
+      cycloneport.hub.gamemode: true
+  cycloneport.hub.build:
+    description: "Allows you to build in the hub."
+    default: false
+api-version: 1.13

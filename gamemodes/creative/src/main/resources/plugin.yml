@@ -1,0 +1,12 @@
+name: "${project.artifactId}"
+version: "${project.version} (${buildNumber})"
+author: "Valaphee <iam@valaphee.com>"
+description: >
+  Creative GCP Plugin for the CyclonePort.
+website: "https://www.valaphee.com"
+load: POSTWORLD
+main: "com.valaphee.cycloneport.CyclonePortGP"
+depend: [ "cyclone-minecraft-bukkit", "cycloneport-bukkit" ]
+prefix: "CyclonePort"
+database: true
+api-version: 1.13

@@ -1,0 +1,111 @@
+name: "${project.artifactId}"
+version: "${project.version} (${buildNumber})"
+author: "Valaphee <iam@valaphee.com>"
+description: >
+  FreeBuild GCP Plugin for the CyclonePort.
+website: "https://www.valaphee.com"
+load: POSTWORLD
+main: "com.valaphee.cycloneport.CyclonePortGP"
+depend: [ "cyclone-minecraft-bukkit", "cycloneport-bukkit" ]
+prefix: "CyclonePort"
+database: true
+permissions:
+  cycloneport.freebuild.*:
+    description: "Gives access to all freebuild functions and commands."
+    children:
+      cycloneport.freebuild.enderchest: true
+      cycloneport.freebuild.workbench: true
+      cycloneport.freebuild.furnace: true
+      cycloneport.freebuild.anvil: true
+      cycloneport.freebuild.enchantmenttable: true
+  cycloneport.freebuild.feed:
+    description: "Allows you to feed yourself."
+    default: false
+  cycloneport.freebuild.feed.other:
+    description: "Allows you to feed other players."
+    default: false
+    childrens:
+      cycloneport.freebuild.feed: true
+  cycloneport.freebuild.heal:
+    description: "Allows you to heal yourself."
+    default: false
+  cycloneport.freebuild.heal.other:
+    description: "Allows you to heal other players."
+    default: false
+    childrens:
+      cycloneport.freebuild.heal: true
+  cycloneport.freebuild.flymode:
+    description: "Allows you to change your flymode."
+    default: false
+  cycloneport.freebuild.flymode.other:
+    description: "Allows you to change the flymode of other players."
+    default: false
+    childrens:
+      cycloneport.freebuild.flymode: true
+  cycloneport.freebuild.godmode:
+    description: "Allows you to change your godmode."
+    default: false
+  cycloneport.freebuild.godmode.other:
+    description: "Allows you to change the godmode of other players."
+    default: false
+    childrens:
+      cycloneport.freebuild.godmode: true
+  cycloneport.freebuild.gamemode:
+    description: "Allows you to set your gamemode."
+    default: false
+  cycloneport.freebuild.gamemode.other:
+    description: "Allows you to set the gamemode of other players."
+    default: false
+    childrens:
+      cycloneport.freebuild.gamemode: true
+  cycloneport.freebuild.give:
+    description: "Allows you to give yourself items."
+    default: false
+  cycloneport.freebuild.give.other:
+    description: "Allows you to give other player items."
+    default: false
+    childrens:
+      cycloneport.freebuild.give: true
+  cycloneport.freebuild.giveall:
+    description: "Allows you to give yourself items."
+    default: false
+    childrens:
+      cycloneport.freebuild.give.other: true
+  cycloneport.freebuild.time:
+    description: "Allows you to play god and change the time."
+    default: false
+  cycloneport.freebuild.weather:
+    description: "Allows you to play god and change the weather."
+    default: false
+  cycloneport.freebuild.enderchest:
+    description: "Allows you to access your enderchest with a command."
+    default: false
+  cycloneport.freebuild.enderchest.other:
+    description: "Allows you to access a players enderchest with a command."
+    default: false
+    childrens:
+      cycloneport.freebuild.enderchest: true
+  cycloneport.freebuild.enderchest.other.modify:
+    description: "Allows you to access a players enderchest with a command and modify it."
+    default: false
+    childrens:
+      cycloneport.freebuild.enderchest.other: true
+  cycloneport.freebuild.workbench:
+    description: "Allows you to use the workbench command"
+    default: false
+  cycloneport.freebuild.kill:
+    description: "Allows you to make suicide"
+    default: false
+  cycloneport.freebuild.kill.other:
+    description: "Allows you to kill an another player."
+    default: false
+  cycloneport.freebuild.killall:
+    description: "Allows you to kill all players, you bastard."
+    default: false
+  cycloneport.freebuild.speed:
+    description: "Allows you to change your walking and flying speed."
+    default: false
+  cycloneport.freebuild.speed.other:
+    description: "Allows you to change an another players walking and flying speed."
+    default: false
+api-version: 1.13

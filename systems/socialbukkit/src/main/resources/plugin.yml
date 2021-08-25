@@ -1,0 +1,12 @@
+name: "${project.artifactId}"
+version: "${project.version} (${buildNumber})"
+author: "Valaphee <iam@valaphee.com>"
+description: >
+  Bukkit CPIP Plugin for the CyclonePort.
+website: "https://www.valaphee.com"
+load: STARTUP
+main: "com.valaphee.cycloneport.CyclonePortSP"
+depend: [ "cyclone-minecraft-bukkit" ]
+prefix: "CyclonePort"
+database: true
+api-version: 1.13

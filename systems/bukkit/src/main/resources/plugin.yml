@@ -1,0 +1,90 @@
+name: "${project.artifactId}"
+version: "${project.version} (${buildNumber})"
+author: "Valaphee <iam@valaphee.com>"
+description: >
+  Bukkit CPIP Plugin for the CyclonePort.
+website: "https://www.valaphee.com"
+load: STARTUP
+main: "com.valaphee.cycloneport.CyclonePortCPIP"
+depend: [ "cyclone-minecraft-bukkit" ]
+prefix: "CyclonePort"
+database: true
+permissions:
+  cycloneport.premium:
+    description: "Marks you as premium."
+    default: false
+  cycloneport.chat.*:
+    description: "Gives access to all chat functions and commands."
+    children:
+      cycloneport.chat.color: true
+      cycloneport.chat.format: true
+      cycloneport.chat.magic: true
+      cycloneport.chat.flush: true
+      cycloneport.chat.broadcast: true
+      cycloneport.chat.silence: true
+      cycloneport.chat.slowmode: true
+  cycloneport.chat.color:
+    description: "Allows you to use color codes in the chat."
+    default: false
+  cycloneport.chat.format:
+    description: "Allows you to use format codes in the chat."
+    default: false
+  cycloneport.chat.magic:
+    description: "Allows you to use the magic code in the chat."
+    default: false
+  cycloneport.chat.flush:
+    description: "Allows you to clear the chat."
+    default: false
+  cycloneport.chat.broadcast:
+    description: "Allows you to broadcast in the chat."
+    default: false
+  cycloneport.chat.silence:
+    description: "Allows you to mute the complete chat."
+    default: false
+  cycloneport.chat.slowmode:
+    description: "Allows you to enable slowmode."
+    default: false
+  cycloneport.spawn:
+    description: "Allows you to teleport to the spawn."
+    default: false
+  cycloneport.teleport.*:
+    description: "Gives access to all teleport commands."
+    childrens:
+      cycloneport.teleport: true
+      cycloneport.teleport.other: true
+      cycloneport.teleport.all: true
+  cycloneport.teleport:
+    descritpion: "Allows you to teleport to an another player."
+    default: false
+  cycloneport.teleport.other:
+    description: "Allows you to teleport an other player."
+    default: false
+    children:
+      cycloneport.teleport: true
+  cycloneport.teleport.all:
+    description: "Allows you to teleport all players."
+    default: false
+    children:
+      cycloneport.teleport: true
+      cycloneport.teleport.other: true
+  cycloneport.teleportrequest.*:
+    description: "Gives access to all teleport request commands."
+    childrens:
+      cycloneport.teleportrequest: true
+      cycloneport.teleportrequest.to: true
+      cycloneport.teleportrequest.here: true
+  cycloneport.teleportrequest:
+    description: "Allows you to accept or deny teleport requests."
+    default: false
+  cycloneport.teleportrequest.away:
+    description: "Allows you to create a teleport request to an another player."
+    default: false
+    children:
+      cycloneport.teleportrequest: true
+  cycloneport.teleportrequest.here:
+    description: "Allows you to create a teleport here request from an another player."
+    default: false
+    children:
+      cycloneport.teleportrequest: true
+      cycloneport.teleportrequest.away: true
+api-version: 1.13
